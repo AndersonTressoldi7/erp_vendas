@@ -1,7 +1,6 @@
 .conteiner-full {
     width: 100%;
     height: 100%;
-    
 }
 
 .status-pdv {
@@ -45,7 +44,6 @@
     border-color: rgba(0, 0, 0, 0.137);
     width: 30%;
     height: 90%;
-  
 }
 
 .lista-produtos-pdv {
@@ -80,15 +78,12 @@
 }
 
 .buttons-total-pdv{
-
     width: 25%;
-   
     margin-left: 10px;
     margin-top: 10px;
 }
 
 .div-total-mercadorias{
- 
     height: 100px;
 }
 
@@ -120,7 +115,6 @@
 
 .button-actions {
     border: none;
-    // border-width: 1px;
     border-color: rgba(0, 0, 0, 0.137);
     display: flex;
     flex-direction: column;
@@ -137,7 +131,6 @@
 .icon-action-pdv {
     color: #002851;
     font-size: 27px; 
-    
 }
 
 .div-pdv-vazio{
@@ -154,11 +147,6 @@
     width: 150px;
     height: 150px;
 }
-
-
-
-
-
 
 @media (max-width: 700px) {
     .status-pdv {
