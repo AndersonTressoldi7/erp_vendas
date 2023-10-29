@@ -1,0 +1,93 @@
+.spacer {
+    flex: 1 1 auto;
+    display: none;
+}
+.icon-house {
+    color: #000000;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.icons-navbar{
+    color: rgb(43 136 196);
+}
+
+.title-page-navbar{
+    margin-left: 10px;
+    font-family: "Sora", Sans-serif;;
+}
+
+.container-options-navbar{
+    position: absolute;
+     right: 10px;
+ }
+
+.navbar a{
+    justify-content: space-between;
+}
+.navbar-options a:hover {
+    color: rgb(46, 42, 42);
+}
+
+.navbar-options a{
+    color: black;
+}
+@media (max-width: 700px) {
+    .navbar {
+        position: relative;
+        margin-left: 10px;
+    }
+    .container-options-navbar{
+        position: static;
+         
+     }
+    .navbar-options {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transition: max-height 0.5s ease-in-out;
+    }
+    .navbar-options a {
+        display: block;
+        align-items: left;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 10px;
+    }
+    .navbar-options.active {
+        max-height: 500px; 
+        transition: max-height 0.5s ease-in;
+      }
+    .navbar-responsive {
+        padding: 0;
+        margin-top: 0;
+    }
+    .icon-list {
+        color: #4b3e4d;
+    }
+    .icons-navbar{
+        margin-top: 8px;
+    }
+    .spacer {
+        background: none;
+        display: flex;
+    }
+    .button-responsive-navbar {
+        border: none;
+        background: none;
+        color: cadetblue;
+        position: relative;
+        left: 88%;
+    }
+}

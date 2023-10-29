@@ -1,0 +1,112 @@
+<div class="conteiner-full">
+    <div class="container-pdv" style=" width: 98.5%; margin: 10px; margin-right: 50px; height: 90%;">
+    <div class="status-pdv">
+      <div class="text-status-pdv">PRONTO PARA VENDA</div>
+    </div>
+
+    <div class="flex-uni-partes-pdv" style="display: flex;">
+
+    <div class="principal-pdv" style="height: 100%; width: 75%;">    
+
+    <div class="flex-display-pdv">
+        <input class="selecao-produtos-qtd"/>
+        <mat-icon style="color: rgb(0, 255, 234);">clear</mat-icon>&nbsp;
+        <input [(ngModel)]="produto" (keyup.enter)="adicionarProduto()" class="selecao-produtos-codigo"/>
+      </div>      
+      
+  
+      <table class="lista-produtos-pdv" style="border-collapse: collapse; width: 100%; background-color: #f2f2f2;">
+        <th style="padding: 8px;">Descrição</th>
+                <th style="padding: 8px;">Quantidade</th>
+                <th style="padding: 8px;">Desconto</th>
+                <th style="padding: 8px;">Preço</th>
+        
+      </table>
+    <div *ngIf="!(produtos.length == 0)" class="selecao-produtos" style="height: 80%; overflow: auto;">
+      <div class="container-selecoes-pdv"> 
+ 
+  
+        <div style="overflow: auto;">
+          <table class="lista-produtos-pdv" style="border-collapse: collapse; width: 100%;">
+            <thead>
+              <tr style="background-color: #f2f2f2;">
+                
+              </tr>
+            </thead>
+            <tbody style="line-height: 1.5;">
+
+              
+              <ng-container *ngFor="let produto of produtos; let i = index">
+                
+                <tr [style.background-color]="i % 2 === 0 ? '#f2f2f2' : '#ffffff'">
+                  <td style="padding: 8px;">{{produto}}</td>
+                  <td style="padding: 8px;">1</td>
+                  <td style="padding: 8px;">0</td>
+                  <td style="padding: 8px;">0</td>
+                </tr>
+                
+              </ng-container>
+            </tbody>
+          </table>
+         
+        </div>
+      </div>
+    </div>
+
+ 
+      <div class="div-pdv-vazio" *ngIf="produtos.length == 0">
+      <span><mat-icon class="icon-pdv-vazio">remove_shopping_cart</mat-icon></span><br>Não há produtos selecionados...
+      
+    </div>
+    
+  
+</div>
+<div class="buttons-total-pdv">
+    <div class="div-totais-pdv">
+        <div class="valores-pdv"> TOTAL MERCADORIAS<br><h2>R$1,00</h2></div>
+    </div>
+    <div class="div-totais-pdv">
+        <div class="valores-pdv"> TOTAL DESCONTOS<br><h2>R$1,00</h2></div>
+    </div>
+    <div class="div-totais-pdv">
+        <div class="valores-pdv"> TOTAL ACRÉSCIMOS<br><h2>R$1,00</h2></div>
+    </div>
+    <div class="div-totais-pdv">
+        <div class="valores-pdv"> TOTAL À PAGAR<br><h2>R$1,00</h2></div>
+    </div>
+</div>
+
+</div>
+
+<div style=" background-color: blue !important; background-image: linear-gradient(to left, rgba(0, 132, 255, 0.849), rgba(0, 191, 255, 0.849), rgba(0, 225, 255, 0.849)); width: 100%; height: 17.5%; margin-top: 8px; border-radius: 10px;">
+<div class="buttons-actions-grid">
+    <button (click)="testarBotoes()" class="button-actions">
+        <span><mat-icon class="icon-action-pdv">remove_shopping_cart</mat-icon></span>
+        <span>Cancelar Venda</span>
+    </button>
+
+    <button (click)="testarBotoes()" class="button-actions">
+        <span><mat-icon class="icon-action-pdv">cancel</mat-icon></span>
+        <span>Cancelar Item</span>
+    </button>
+
+    <button (click)="testarBotoes()" class="button-actions">
+        <span><mat-icon class="icon-action-pdv">search</mat-icon></span>
+        <span>Buscar Produto</span>
+    </button>
+
+    <button (click)="testarBotoes()" class="button-actions">
+        <span><mat-icon class="icon-action-pdv">iso</mat-icon></span>
+        <span>Desconto / <br> Acréscimo</span>
+    </button>
+
+    <button (click)="testarBotoes()" class="button-actions">
+        <span><mat-icon class="icon-action-pdv">shopping_cart</mat-icon></span>
+        <span>Finalizar Venda</span>
+    </button>
+</div>
+    
+</div>
+
+  </div>
+  

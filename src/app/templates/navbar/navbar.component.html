@@ -1,0 +1,25 @@
+<mat-toolbar class="navbar">
+    <span class="span-title" mat-elevation-z2>
+      <img src="../../../assets/img/logo_Operax.png"  class="image-div" alt="Girl in a jacket"  width="100px" style="margin-top: 10px"> 
+    </span>
+    <div class="spacer">
+      <button class="button-responsive-navbar" (click)="abrirMenu()">
+        <mat-icon class="icon-list">list</mat-icon>
+      </button>
+    </div>
+    
+ <div class="container-options-navbar">    
+    <div class="navbar-options slide-out" [@slideInOut]="telaPequena && !menuAberto ? 'out' : 'in'">  
+        <div class="navbar-responsive">
+          <a mat-button class="options-letter"><mat-icon class="icons-navbar">shopping_cart</mat-icon>Pdv</a>
+          <a mat-button class="options-letter"><mat-icon class="icons-navbar">payments</mat-icon>Financeiro</a>
+          <a mat-button class="options-letter"><mat-icon class="icons-navbar">library_add</mat-icon>Cadastros</a>
+          <a mat-button class="options-letter"><mat-icon class="icons-navbar">print</mat-icon>Relatórios</a>
+        </div>
+      </div> 
+  </div>
+
+
+      
+  </mat-toolbar>
+  
