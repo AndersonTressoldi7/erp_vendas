@@ -1,3 +1,8 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 .conteiner-full {
     width: 100%;
     height: 100%;
@@ -46,6 +51,8 @@
     height: 90%;
 }
 
+
+
 .lista-produtos-pdv {
     width: 98%;
     margin-top: 10px;
@@ -81,30 +88,32 @@
     width: 25%;
     margin-left: 10px;
     margin-top: 10px;
+    
 }
 
 .div-total-mercadorias{
     height: 100px;
+    
 }
 
 .div-totais-pdv {
     background-color: blue !important; background-image: linear-gradient(to left, rgba(0, 132, 255, 0.849), rgba(0, 191, 255, 0.849), rgba(0, 225, 255, 0.849));
     font-size: 20px;
     text-shadow: 0 0 2px rgb(255, 255, 255);
-    border: 1px solid rgb(216, 216, 216);
+    border: 1px solid rgb(0, 0, 0);
     margin-bottom: 20px;
     text-align: center;
     background-color: rgb(34, 155, 255);
     height: 21.5%;
     border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#textos-divs-totais{
-    margin-top: 10px;
-}
+
 .valores-pdv {
     padding: 10px;
     font-size: 30px;
+    
 }
 
 
@@ -119,6 +128,7 @@
 }
 
 .button-actions {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: none;
     border-color: rgba(0, 0, 0, 0.137);
     display: flex;
@@ -148,14 +158,61 @@
 }
 
 .icon-pdv-vazio{
-    font-size: 150px;
-    width: 150px;
-    height: 150px;
+    font-size: 1000%;
+    width: 100%;
+    height: 100%;
+}
+
+.text-totais-pdv{
+    text-align: center; 
+      border-bottom: solid; 
+      border: 1px solid rgb(0, 0, 0);
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      background-color: rgb(74, 165, 255);
+      padding: .2em 1em;
+      margin: 0 !important;
+      color: rgb(0, 0, 0);
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container-pdv{
+      height: 100%;
+      margin-left: 10px;
 }
 
 @media (max-width: 700px) {
+
+    .buttons-actions-grid {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+        margin: 15px;
+        margin-left: 10px !important;
+    }
+    .button-actions{
+        width: 20%;
+    }
+    .flex-uni-partes-pdv{
+        margin-right:  5%;
+    }
+    .buttons-total-pdv, .div-totais-pdv{
+        width: 0px;
+        display: none;
+    }
+    
+    .principal-pdv{
+        height: 100% !important;
+        width: 100% !important;
+    }
     .status-pdv {
         font-size: 25px;
+        display: flex;
+        margin-right: 25%;
+        width: 100%;
     }
 
     .selecao-produtos {

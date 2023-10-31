@@ -1,5 +1,7 @@
-<div class="conteiner-full">
-    <div class="container-pdv" style=" width: 98.5%; margin: 10px; margin-right: 50px; height: 90%;">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<div class="conteiner-full" style="width: 100%; height: 100%; padding: 0;">
+    <div class="container-pdv">
     <div class="status-pdv">
       <div class="text-status-pdv">PRONTO PARA VENDA</div>
     </div>
@@ -54,41 +56,41 @@
     </div>
 
  
-      <div class="div-pdv-vazio" *ngIf="produtos.length == 0">
-      <span><mat-icon class="icon-pdv-vazio">remove_shopping_cart</mat-icon></span><br>Não há produtos selecionados...
-      
-    </div>
+    <div class="div-pdv-vazio" *ngIf="produtos.length == 0">
+      <div class="icon-container">
+          <span><mat-icon class="icon-pdv-vazio">remove_shopping_cart</mat-icon></span>
+      </div>
+      <p>Não há produtos selecionados...</p>
+  </div>
+  
     
   
 </div>
 <div class="buttons-total-pdv">
     <div class="div-totais-pdv">
-      <div id="textos-divs-totais">
-        TOTAL MERCADORIAS<br>
+      <h3 class="text-totais-pdv">
+        TOTAL PRODUTOS<br>
         
-      </div>
-        <div class="valores-pdv"> R$1,00</div>
+    </h3>
+        <div class="valores-pdv"> R$ {{produtos.length}},00</div>
     </div>
     <div class="div-totais-pdv">
-      <div id="textos-divs-totais">
+      <h3 class="text-totais-pdv">
       TOTAL DESCONTOS<br>
-      
+    </h3>
+        <div class="valores-pdv"> R$0,00</div>
     </div>
-        <div class="valores-pdv"> R$1,00</div>
-    </div>
-    <div class="div-totais-pdv">
-      <div id="textos-divs-totais">
-        TOTAL ACRÉSCIMOS<br>
-        
-      </div>
-        <div class="valores-pdv"> R$1,00</div>
+    <div  class="div-totais-pdv">
+      <h3 class="text-totais-pdv">
+   TOTAL ACRÉSCIMOS
+      </h3>
+        <div class="valores-pdv"> R$0,00</div>
     </div>
     <div class="div-totais-pdv">
-      <div id="textos-divs-totais">
-        TOTAL Á PAGAR<br>
-        
-      </div>
-        <div class="valores-pdv"> R$1,00</div>
+      <h3 class="text-totais-pdv">
+        TOTAL Á PAGAR
+      </h3>
+        <div class="valores-pdv"> R${{produtos.length}},00</div>
     </div>
 </div>
 
@@ -96,22 +98,22 @@
 
 <div style=" background-color: blue !important; background-image: linear-gradient(to left, rgba(0, 132, 255, 0.849), rgba(0, 191, 255, 0.849), rgba(0, 225, 255, 0.849)); width: 100%; height: 17.5%; margin-top: 8px; border-radius: 10px;">
 <div class="buttons-actions-grid">
-    <button (click)="testarBotoes()" class="button-actions">
+    <button *ngIf="!telaPequena" (click)="testarBotoes()" class="button-actions">
         <span><mat-icon class="icon-action-pdv">remove_shopping_cart</mat-icon></span>
         <span>Cancelar Venda</span>
     </button>
 
-    <button (click)="testarBotoes()" class="button-actions">
+    <button *ngIf="!telaPequena" (click)="testarBotoes()" class="button-actions">
         <span><mat-icon class="icon-action-pdv">cancel</mat-icon></span>
         <span>Cancelar Item</span>
     </button>
 
-    <button (click)="testarBotoes()" class="button-actions">
+    <button *ngIf="!telaPequena" (click)="testarBotoes()" class="button-actions">
         <span><mat-icon class="icon-action-pdv">search</mat-icon></span>
         <span>Buscar Produto</span>
     </button>
 
-    <button (click)="testarBotoes()" class="button-actions">
+    <button *ngIf="!telaPequena" (click)="testarBotoes()" class="button-actions">
         <span><mat-icon class="icon-action-pdv">iso</mat-icon></span>
         <span>Desconto / <br> Acréscimo</span>
     </button>

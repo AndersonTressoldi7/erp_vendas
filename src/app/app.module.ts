@@ -11,6 +11,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { PdvComponentComponent } from './pages/pdv-component/pdv-component.component';
 import { FormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
