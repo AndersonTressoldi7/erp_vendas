@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 
 @Component({
@@ -31,11 +31,17 @@ export class PdvComponentComponent implements OnInit{
     }
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.atualizarTamanhoDaTela();
+  }
+
+
   atualizarTamanhoDaTela() {
     this.telaPequena = window.innerWidth <= 700;
   }
 
-  ngOnInit(): void {
-    this.telaPequena = window.innerWidth <= 700;
+  ngOnInit() {
+    this.atualizarTamanhoDaTela();
   }
 }

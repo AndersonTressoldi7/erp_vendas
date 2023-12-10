@@ -34,7 +34,7 @@ body{
 
 .container-selecoes-pdv {
     margin-top: 5px;
-    height: 100%;
+    height: 95%;
     width: 100%;
     flex-wrap: wrap;
 }
@@ -78,6 +78,7 @@ body{
 
 .input-quantidade-produto-pdv{
     width: 90%;
+    touch-action: manipulation; 
 }
 
 .flex-uni-partes-pdv{
@@ -177,24 +178,32 @@ body{
 }
 
 .container-pdv{
-      height: 100%;
+      height: 95%;
       margin-left: 10px;
 }
 
-@media (max-width: 700px) {
+@media (min-width: 0px) and (max-width: 700px ) {
 
     .buttons-actions-grid {
 
         display: flex;
-        align-items: center;
-        justify-content: center;
+        align-items: left;
+        justify-content: left;
         width: 100%;
         margin-top: 20px;
         margin: 15px;
         margin-left: 10px !important;
     }
     .button-actions{
+        margin-top: 3%;
+        margin-left: 8%;
         width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+
+        
     }
     .flex-uni-partes-pdv{
         margin-right:  5%;
@@ -205,8 +214,10 @@ body{
     }
     
     .principal-pdv{
+        margin: 0;
         height: 100% !important;
-        width: 100% !important;
+        width: 110% !important;
+        touch-action: manipulation;
     }
     .status-pdv {
         font-size: 25px;
@@ -220,4 +231,12 @@ body{
         height: 10vh;
         margin-left: 10px;
     }
+
+    .selecao-produtos-qtd,
+.selecao-produtos-codigo {
+  z-index: 1;
+}
+
+    
+    
 }

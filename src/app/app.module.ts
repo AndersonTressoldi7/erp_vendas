@@ -10,6 +10,7 @@ import { NavbarComponent } from './templates/navbar/navbar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PdvComponentComponent } from './pages/pdv-component/pdv-component.component';
 import { FormsModule } from '@angular/forms';
+import { CadastrosComponent } from './pages/cadastros/cadastros.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     NavbarComponent,
     InicioComponent,
-    PdvComponentComponent
+    PdvComponentComponent,
+    CadastrosComponent
   ],
   imports: [
     BrowserModule,

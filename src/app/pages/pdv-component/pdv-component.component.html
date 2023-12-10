@@ -1,5 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
+
 <div class="conteiner-full" style="width: 100%; height: 100%; padding: 0;">
     <div class="container-pdv">
     <div class="status-pdv">
@@ -13,7 +14,8 @@
     <div class="flex-display-pdv">
         <input class="selecao-produtos-qtd"/>
         <mat-icon style="color: rgb(0, 255, 234);">clear</mat-icon>&nbsp;
-        <input [(ngModel)]="produto" (keyup.enter)="adicionarProduto()" class="selecao-produtos-codigo"/>
+        <input [(ngModel)]="produto" (keyup.enter)="adicionarProduto()" class="selecao-produtos-codigo" />
+
       </div>      
       
   
@@ -22,6 +24,7 @@
                 <th style="padding: 8px;">Quantidade</th>
                 <th style="padding: 8px;">Desconto</th>
                 <th style="padding: 8px;">Preço</th>
+                <th style="padding: 8px;">ação</th>
         
       </table>
     <div *ngIf="!(produtos.length == 0)" class="selecao-produtos" style="height: 80%; overflow: auto;">
