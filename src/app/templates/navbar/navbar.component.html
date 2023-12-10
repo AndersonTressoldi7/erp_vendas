@@ -12,13 +12,13 @@
     <div class="navbar-options slide-out" [@slideInOut]="telaPequena && !menuAberto ? 'out' : 'in'">  
         <div class="navbar-responsive">
           <a mat-button class="options-letter" routerLink="/pdv"><mat-icon class="icons-navbar">shopping_cart</mat-icon>Pdv</a>
-          <a mat-button class="options-letter"><mat-icon class="icons-navbar">payments</mat-icon>Financeiro</a>
+          <a mat-button class="options-letter" routerLink="/financeiro"><mat-icon class="icons-navbar">payments</mat-icon>Financeiro</a>
           <a mat-button class="options-letter" routerLink="/CadastrosComponent">
-            <mat-icon class="icons-navbar">library_add</mat-icon>
+            <mat-icon class="icons-navbar" >library_add</mat-icon>
             Cadastros
           </a>
           
-          <a mat-button class="options-letter"><mat-icon class="icons-navbar">print</mat-icon>Relatórios</a>
+          <a mat-button class="options-letter" routerLink="/relatorios"><mat-icon class="icons-navbar">print</mat-icon>Relatórios</a>
         </div>
       </div> 
   </div>

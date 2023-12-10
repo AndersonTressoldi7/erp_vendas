@@ -11,6 +11,8 @@ import { InicioComponent } from './inicio/inicio.component';
 import { PdvComponentComponent } from './pages/pdv-component/pdv-component.component';
 import { FormsModule } from '@angular/forms';
 import { CadastrosComponent } from './pages/cadastros/cadastros.component';
+import { FinanceiroComponent } from './pages/financeiro/financeiro.component';
+import { RelatoriosComponent } from './pages/relatorios/relatorios.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { CadastrosComponent } from './pages/cadastros/cadastros.component';
     NavbarComponent,
     InicioComponent,
     PdvComponentComponent,
-    CadastrosComponent
+    CadastrosComponent,
+    FinanceiroComponent,
+    RelatoriosComponent
   ],
   imports: [
     BrowserModule,

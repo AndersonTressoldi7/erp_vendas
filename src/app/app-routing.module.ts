@@ -2,11 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrosComponent } from './pages/cadastros/cadastros.component';
 import { PdvComponentComponent } from './pages/pdv-component/pdv-component.component';
+import { FinanceiroComponent } from './pages/financeiro/financeiro.component';
+import { RelatoriosComponent } from './pages/relatorios/relatorios.component';
 
 const routes: Routes = [
   { path: '', component: PdvComponentComponent},
   { path: 'CadastrosComponent', component: CadastrosComponent },
-  { path: 'pdv', component: PdvComponentComponent}
+  { path: 'pdv', component: PdvComponentComponent},
+  { path: 'financeiro', component: FinanceiroComponent},
+  { path: 'relatorios', component: RelatoriosComponent}
 ];
 
 
