@@ -1,4 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Produto } from 'src/app/models/produtos.model';
+import { ProdutosService } from 'src/app/services/produtos.service';
 
 
 @Component({
@@ -8,28 +10,35 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class PdvComponentComponent implements OnInit{
 
-  produto: string = "";
-  produtos: Array<string> = [
- 
-  ];
+  codigoProduto: string = "";
+  produtos: Array<Produto> = [];
+  produtosTotal: number = 0;
+
+  public produtoSvc: ProdutosService;
+
+
+
+  constructor(produtoSvc: ProdutosService){
+    this.produtoSvc = produtoSvc;
+  }
 
 
   public telaPequena: boolean = false;
 
-  adicionarProduto(){
-    this.produtos.push(this.produto);
-    this.produto = "";
+  adicionarProduto(codigoProduto: string){
+    this.produtoSvc.buscarProdutoPeloCodigo(codigoProduto).subscribe(
+      (produto: Produto) => {
+      this.produtos.push(produto);
+      this.produtosTotal += produto.preco;
+      },
+      (error) => {
+        window.alert('Código não encontrado!')
+      }
+    );
+    this.codigoProduto = "";
   }
 
-   testarBotoes(){
-    if(this.produtos.length == 0){
-      alert('Você precisa adicionar produtos!!');
-      
-      console.log(this.telaPequena);
-    }else{
-      console.log('tem produtos');
-    }
-  }
+   testarBotoes(){}
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
@@ -43,5 +52,13 @@ export class PdvComponentComponent implements OnInit{
 
   ngOnInit() {
     this.atualizarTamanhoDaTela();
+    this.produtoSvc.getProdutos().subscribe(
+      (data: any[]) => {
+        console.log(data); 
+      },
+      error => {
+        console.error('Erro ao buscar produtos:', error);
+      }
+    );
   }
 }

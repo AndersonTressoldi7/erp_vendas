@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { CadastrosComponent } from './pages/cadastros/cadastros.component';
 import { FinanceiroComponent } from './pages/financeiro/financeiro.component';
 import { RelatoriosComponent } from './pages/relatorios/relatorios.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { RelatoriosComponent } from './pages/relatorios/relatorios.component';
     PdvComponentComponent,
     CadastrosComponent,
     FinanceiroComponent,
-    RelatoriosComponent
+    RelatoriosComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +33,8 @@ import { RelatoriosComponent } from './pages/relatorios/relatorios.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
