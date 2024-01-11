@@ -1,0 +1,12 @@
+<div class="full-div">
+    
+<div class="titulo-centralizado">
+    <h1 id="title-cadastro-produto">Cadastro de Produto</h1>
+</div>
+
+<div class="cadastro_inputs">
+<div class="form_cadastro_produto"> [(ngModel)]="produto.nome" <input class="nome_produto" id="nome_produto" placeholder="Nome:"></div>
+<div class="form_cadastro_produto"> [(ngModel)]="produto.codigo" <input class="codigo_produto" id="codigo_produto" placeholder="Código:"></div>
+<div class="form_cadastro_produto"> [(ngModel)]="produto.preco" <input class="preco_produto" id="nome_produto" placeholder="Preço:"></div><br>
+<button (click)="salvarProduto(produto)">Salvar</button>
+</div>

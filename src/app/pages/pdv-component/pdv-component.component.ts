@@ -29,7 +29,7 @@ export class PdvComponentComponent implements OnInit{
     this.produtoSvc.buscarProdutoPeloCodigo(codigoProduto).subscribe(
       (produto: Produto) => {
       this.produtos.push(produto);
-      this.produtosTotal += produto.preco;
+      this.produtosTotal += parseFloat(produto.preco);
       },
       (error) => {
         window.alert('Código não encontrado!')

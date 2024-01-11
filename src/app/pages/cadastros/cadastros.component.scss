@@ -39,6 +39,8 @@
   }
   
   .divs-grupos-selecao-cadastro {
+    box-shadow: 5px 5px 5px rgb(174, 174, 174);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #00d0ff;
     height: 80%; 
     width: 30%; 
@@ -48,6 +50,12 @@
     justify-content: center;
     font-size: 25px;
     border-radius: 10px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .divs-grupos-selecao-cadastro:hover{
+    background-color:rgb(0, 179, 255);
   }
 
   .icon-cadastros{

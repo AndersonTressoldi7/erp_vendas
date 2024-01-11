@@ -14,6 +14,8 @@ import { CadastrosComponent } from './pages/cadastros/cadastros.component';
 import { FinanceiroComponent } from './pages/financeiro/financeiro.component';
 import { RelatoriosComponent } from './pages/relatorios/relatorios.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatIconModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

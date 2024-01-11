@@ -18,4 +18,10 @@ export class ProdutosService {
   buscarProdutoPeloCodigo(codigo: string){
     return this.http.get<Produto>(`${this.urlBase}/produtos/${codigo}`);
   }
+
+  salvarProduto(novoProduto: Produto){
+    console.log('Esse é o novo produto: ', novoProduto);
+    const CadastroConfirmado = this.http.post<Produto>(`${this.urlBase}/produtos/`, novoProduto);
+    console.log(' cadastro:', CadastroConfirmado);
+  }
 }
