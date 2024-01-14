@@ -17,7 +17,7 @@ export class CadastrosComponent implements OnInit {
   abrirDialogCadastroProdutos() {
     const dialogRef = this.dialog.open(ProdutosComponent, {
       width: '900px', 
-      height: '900px'
+      height: '400px'
     });
   }
 }

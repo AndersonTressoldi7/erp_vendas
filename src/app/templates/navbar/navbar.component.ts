@@ -53,7 +53,6 @@ export class NavbarComponent implements OnInit {
   atualizarTamanhoDaTela() {
     this.telaPequena = window.innerWidth <= 700;
     this.atualizarMenuAberto();
-    console.log('clicou pra atualizar');
   }
 
   ngOnInit() {

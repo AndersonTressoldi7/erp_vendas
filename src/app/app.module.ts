@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import { MatButtonModule} from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './templates/navbar/navbar.component';
 import { InicioComponent } from './inicio/inicio.component';
@@ -15,8 +15,8 @@ import { FinanceiroComponent } from './pages/financeiro/financeiro.component';
 import { RelatoriosComponent } from './pages/relatorios/relatorios.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
-
-
+import { ProdutosComponent } from './pages/cadastros/produtos/produtos.component';
+import { DialogAvisoComponent } from './templates/dialog-aviso/dialog-aviso.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +27,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     CadastrosComponent,
     FinanceiroComponent,
     RelatoriosComponent,
+    ProdutosComponent,
+    DialogAvisoComponent
   ],
   imports: [
     BrowserModule,
@@ -37,9 +39,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     FormsModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
