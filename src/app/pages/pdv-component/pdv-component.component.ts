@@ -38,8 +38,6 @@ export class PdvComponentComponent implements OnInit{
     this.codigoProduto = "";
   }
 
-   testarBotoes(){}
-
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.atualizarTamanhoDaTela();

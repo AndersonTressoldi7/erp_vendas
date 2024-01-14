@@ -1,11 +1,9 @@
-<div class="titulo-menu-cadastros">
-    <div class="text-titulo-menu-cadastros">Menu de Cadastros</div>
-</div>
+<app-titulo [titulo]="'Menu de cadastros'"></app-titulo>
 
 <div class="div-total-cadastros">
     <p class="titulo-grupos-cadastro">Estoque</p>
  <div class="relacao-produtos">
-    <button class="divs-grupos-selecao-cadastro" (click)="abrirDialogCadastroProdutos()"> <mat-icon class="icon-cadastros">shopping_basket</mat-icon> &nbsp;Produtos</button>
+    <button class="divs-grupos-selecao-cadastro" routerLink="/listaProdutos"> <mat-icon class="icon-cadastros">shopping_basket</mat-icon> &nbsp;Produtos</button>
     <button class="divs-grupos-selecao-cadastro"> <mat-icon class="icon-cadastros">pie_chart_outline</mat-icon> &nbsp;Categorias</button>
     <button class="divs-grupos-selecao-cadastro"> <mat-icon class="icon-cadastros">storage</mat-icon> &nbsp;Grupos</button>
  </div>

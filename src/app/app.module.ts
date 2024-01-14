@@ -18,6 +18,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ProdutosComponent } from './pages/cadastros/produtos/produtos.component';
 import { DialogAvisoComponent } from './templates/dialog-aviso/dialog-aviso.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ListagemProdutosComponent } from './pages/listagem-produtos/listagem-produtos.component';
+import { TituloComponent } from './templates/titulo/titulo.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     FinanceiroComponent,
     RelatoriosComponent,
     ProdutosComponent,
-    DialogAvisoComponent
+    DialogAvisoComponent,
+    ListagemProdutosComponent,
+    TituloComponent
   ],
   imports: [
     BrowserModule,

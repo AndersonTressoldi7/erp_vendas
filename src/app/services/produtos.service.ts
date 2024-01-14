@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Produto } from '../models/produtos.model';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ export class ProdutosService {
     return this.http.post<Produto>(`${this.urlBase}/produtos/cadastrarProduto`, data);
   }
   
+  buscarProdutosFiltro(filtro: string, checkboxSelecionado: string): Observable<any[]>{
+    const url = `${this.urlBase}/produtos/filtrarProduto/?filtros=${filtro}&checkboxTipoFiltro=${checkboxSelecionado}`;
+    return this.http.get<any[]>(url);
+  }
   
   
 }

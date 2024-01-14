@@ -1,0 +1,86 @@
+*{
+    bottom: 0px;
+    padding: 0px;
+}
+#inputBusca {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .inputBusca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .checkboxBusca{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    
+  }
+  
+  button {
+    padding: 8px;
+    background-color: #06b2a9; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #01c8ff; 
+  }
+
+
+.opcoesBusca{
+    display: inline-flex;
+  
+
+}
+  .checkboxBusca input[type="checkbox"] {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkboxBusca label {
+    font-size: 16px;
+    color: #333; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  .botaoCadastrarProduto{
+    width: 600px;
+    margin-left: 20px;
+  }
+  
+  .checkboxBusca input[type="checkbox"] {
+    appearance: none; 
+    width: 18px; 
+    height: 18px;
+    border: 2px solid #555;
+    border-radius: 4px;
+    margin-right: 5px;
+    outline: none; 
+    cursor: pointer;
+  }
+  
+  .checkboxBusca input[type="checkbox"]:checked {
+    background-color: rgba(0, 191, 255, 0.849); 
+    border: 2px solid rgba(0, 191, 255, 0.849); 
+    color: white; 
+  }
+
+  .listaProdutos{
+    margin: 20px;
+  }
+  
+  

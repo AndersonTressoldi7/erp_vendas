@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ProdutosComponent } from './produtos/produtos.component';
 
 @Component({
   selector: 'app-cadastros',
@@ -14,10 +13,5 @@ export class CadastrosComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  abrirDialogCadastroProdutos() {
-    const dialogRef = this.dialog.open(ProdutosComponent, {
-      width: '900px', 
-      height: '400px'
-    });
-  }
+  
 }

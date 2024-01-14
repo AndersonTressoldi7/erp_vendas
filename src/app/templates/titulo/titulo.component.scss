@@ -1,0 +1,28 @@
+.texto_titulo{
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 0 0 2px black;
+}
+
+.titulo{
+    height: 10vh;
+    background-color: blue !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    background-image: linear-gradient(to left, rgba(0, 132, 255, 0.849), rgba(0, 191, 255, 0.849), rgba(0, 225, 255, 0.849));
+    border-radius: 10px;
+}
+
+
+@media (min-width: 0px) and (max-width: 700px ) {
+
+
+.titulo {
+    font-size: 25px;
+    display: flex;
+    margin-right: 25%;
+    width: 100%;
+}
+}
