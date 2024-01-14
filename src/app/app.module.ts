@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ProdutosComponent } from './pages/cadastros/produtos/produtos.component';
 import { DialogAvisoComponent } from './templates/dialog-aviso/dialog-aviso.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { DialogAvisoComponent } from './templates/dialog-aviso/dialog-aviso.comp
     FormsModule,
     HttpClientModule,
     MatDialogModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
