@@ -5,6 +5,7 @@ import { PdvComponentComponent } from './pages/pdv-component/pdv-component.compo
 import { FinanceiroComponent } from './pages/financeiro/financeiro.component';
 import { RelatoriosComponent } from './pages/relatorios/relatorios.component';
 import { ListagemProdutosComponent } from './pages/listagem-produtos/listagem-produtos.component';
+import { FinalizaVendaPdvComponent } from './pages/finaliza-venda-pdv/finaliza-venda-pdv.component';
 
 const routes: Routes = [
   { path: '', component: PdvComponentComponent},
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'pdv', component: PdvComponentComponent},
   { path: 'financeiro', component: FinanceiroComponent},
   { path: 'relatorios', component: RelatoriosComponent},
-  {path: 'listaProdutos', component: ListagemProdutosComponent}
+  { path: 'listaProdutos', component: ListagemProdutosComponent},
+  { path: 'finalizaVendaPdv', component: FinalizaVendaPdvComponent},
 ];
 
 

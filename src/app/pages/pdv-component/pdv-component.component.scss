@@ -29,7 +29,7 @@ body{
     padding: 0;
     display: flex;
     width: 100%;
-    height: 100%;
+    max-height: 90%;
 }
 
 .container-selecoes-pdv {
@@ -56,7 +56,11 @@ body{
 .lista-produtos-pdv {
     width: 98%;
     margin-top: 10px;
-    margin-bottom: 10px;
+  
+}
+
+.lista-produtos-pdv td{
+    text-align: center;
 }
 
 .selecao-produtos-codigo {
@@ -129,19 +133,24 @@ body{
 }
 
 .button-actions {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border: none;
-    border-color: rgba(0, 0, 0, 0.137);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: center;
-    background-color: rgb(25, 151, 255);
     width: 150px;
     height: 90px;
+
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color:rgb(25, 151, 255);
     border-radius: 10px;
-    box-shadow: inset 0 0 2px #000000;
+    cursor: pointer;
+    border: none;
+}
+
+.button-actions:hover{
+    background-color:rgb(0, 179, 255);
 }
 
 .icon-action-pdv {
@@ -151,7 +160,6 @@ body{
 
 .div-pdv-vazio{
     height: 80%;
-    margin-top: 100px;
     align-items: center;
     text-align: center;
     display: inline-flexbox;
@@ -159,6 +167,7 @@ body{
 }
 
 .icon-pdv-vazio{
+    margin-top: 10%;
     font-size: 1000%;
     width: 100%;
     height: 100%;
@@ -229,8 +238,9 @@ body{
 
     .selecao-produtos {
         width: 95%;
-        height: 10vh;
+        max-height: 90%;
         margin-left: 10px;
+      
     }
 
     .selecao-produtos-qtd,

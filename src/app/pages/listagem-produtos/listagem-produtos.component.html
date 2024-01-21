@@ -2,7 +2,8 @@
 
 
 <div class="inputBusca">
-    <input  [(ngModel)]="filtro"  [placeholder]="codigoCheckbox ? 'Digite o código' : descricaoCheckbox ? 'Digite a descrição' : ''" id="inputBusca" [disabled]="!codigoCheckbox && !descricaoCheckbox">
+    <input  [(ngModel)]="filtro"  [placeholder]="codigoCheckbox ? 'Digite o código' : descricaoCheckbox ? 'Digite a descrição' : ''" 
+    id="inputBusca" [disabled]="!codigoCheckbox && !descricaoCheckbox" (keyup.enter)="buscarProdutosPeloFiltro(filtro)">
      
     <button (click)="buscarProdutosPeloFiltro(filtro)">Buscar</button>
 

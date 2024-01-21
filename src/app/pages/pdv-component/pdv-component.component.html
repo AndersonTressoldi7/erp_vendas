@@ -12,45 +12,34 @@
     <div class="principal-pdv" style="height: 100%; width: 75%;">    
 
     <div class="flex-display-pdv">
-        <input class="selecao-produtos-qtd" value="1"/>
+        <input class="selecao-produtos-qtd" [(ngModel)]="quantidadeProduto"/>
         <mat-icon style="color: rgb(0, 255, 234);">clear</mat-icon>&nbsp;
-        <input [(ngModel)]="codigoProduto" (keyup.enter)="adicionarProduto(codigoProduto)" class="selecao-produtos-codigo" />
+        <input #campoCodigo  [(ngModel)]="codigoProduto" (keyup.enter)="adicionarProduto(codigoProduto)" class="selecao-produtos-codigo" />
 
       </div>      
       
-  
-      <table class="lista-produtos-pdv" style="border-collapse: collapse; width: 100%; background-color: #f2f2f2;">
-        <th style="padding: 8px;">Descrição</th>
+      <div class="selecao-produtos" style=" overflow: auto;">
+        <div class="container-selecoes-pdv" >
+          <table class="lista-produtos-pdv" style="border-collapse: collapse; width: 100%; background-color: #f2f2f2;">
+            <thead>
+              <tr>
+                <th style="padding: 8px;">Descrição</th>
                 <th style="padding: 8px; vertical-align: middle;">Quantidade</th>
                 <th style="padding: 8px; vertical-align: middle;">Desconto</th>
                 <th style="padding: 8px; vertical-align: middle;">Preço</th>
-      </table>
-      <div *ngIf="!(produtos.length == 0)" class="selecao-produtos" style="height: 80%; overflow: auto;">
-        <div class="container-selecoes-pdv">
-      
-          <div style="overflow: auto;">
-            <table class="lista-produtos-pdv" style="border-collapse: collapse; width: 100%;">
-              <thead>
-                <tr style="background-color: #f2f2f2;">
-      
+              </tr>
+            </thead>
+            <tbody style="line-height: 1.5;" >
+              <ng-container *ngFor="let produto of produtos; let i = index " >
+                <tr [style.background-color]="i % 2 === 0 ? '#ffffff': '#f2f2f2' ">
+                  <td style="padding: 8px; vertical-align: middle;">{{produto.nome}}</td>
+                  <td style="padding: 8px; vertical-align: middle;">{{produto.quantidade | number:'1.2-2'}} </td>
+                  <td style="padding: 8px; vertical-align: middle;">0</td>
+                  <td style="padding: 8px;  align-items: middle;">R$ {{produto.preco | number:'1.2-2'}}</td>
                 </tr>
-              </thead>
-              <tbody style="line-height: 1.5;">
-      
-                <ng-container *ngFor="let produto of produtos; let i = index">
-      
-                  <tr [style.background-color]="i % 2 === 0 ? '#f2f2f2' : '#ffffff'">
-                    <td style="padding: 8px; vertical-align: middle;">{{produto.nome}}</td>
-                    <td style="padding: 8px; vertical-align: middle;">1</td>
-                    <td style="padding: 8px; vertical-align: middle;">0</td>
-                    <td style="padding: 8px; display: flex; align-items: flex-end;">{{produto.preco}}</td>
-                  </tr>
-      
-                </ng-container>
-              </tbody>
-            </table>
-      
-          </div>
+              </ng-container>
+            </tbody>
+          </table>
         </div>
       </div>
       
@@ -119,7 +108,7 @@
         <span>Desconto / <br> Acréscimo</span>
     </button>
 
-    <button  class="button-actions">
+    <button  class="button-actions" routerLink="/finalizaVendaPdv">
         <span><mat-icon class="icon-action-pdv">shopping_cart</mat-icon></span>
         <span>Finalizar Venda</span>
     </button>

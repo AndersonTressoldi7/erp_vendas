@@ -20,6 +20,7 @@ import { DialogAvisoComponent } from './templates/dialog-aviso/dialog-aviso.comp
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListagemProdutosComponent } from './pages/listagem-produtos/listagem-produtos.component';
 import { TituloComponent } from './templates/titulo/titulo.component';
+import { FinalizaVendaPdvComponent } from './pages/finaliza-venda-pdv/finaliza-venda-pdv.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { TituloComponent } from './templates/titulo/titulo.component';
     ProdutosComponent,
     DialogAvisoComponent,
     ListagemProdutosComponent,
-    TituloComponent
+    TituloComponent,
+    FinalizaVendaPdvComponent
   ],
   imports: [
     BrowserModule,

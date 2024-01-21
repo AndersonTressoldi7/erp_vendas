@@ -1,6 +1,9 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { Produto } from 'src/app/models/produtos.model';
 import { ProdutosService } from 'src/app/services/produtos.service';
+import { ViewChild } from '@angular/core';
+import { utils } from 'src/app/utils';
+import { MatDialog } from "@angular/material/dialog";
 
 
 @Component({
@@ -10,15 +13,21 @@ import { ProdutosService } from 'src/app/services/produtos.service';
 })
 export class PdvComponentComponent implements OnInit{
 
+  @ViewChild('campoCodigo', { static: true }) campoCodigo!: ElementRef;
+
+
   codigoProduto: string = "";
   produtos: Array<Produto> = [];
   produtosTotal: number = 0;
+  quantidadeProduto: number = 1;
+
+  
 
   public produtoSvc: ProdutosService;
 
 
 
-  constructor(produtoSvc: ProdutosService){
+  constructor(produtoSvc: ProdutosService, private dialog: MatDialog){
     this.produtoSvc = produtoSvc;
   }
 
@@ -26,16 +35,30 @@ export class PdvComponentComponent implements OnInit{
   public telaPequena: boolean = false;
 
   adicionarProduto(codigoProduto: string){
-    this.produtoSvc.buscarProdutoPeloCodigo(codigoProduto).subscribe(
-      (produto: Produto) => {
-      this.produtos.push(produto);
-      this.produtosTotal += Number(produto.preco);
+
+    if(codigoProduto && this.quantidadeProduto){
+      this.produtoSvc.buscarProdutoPeloCodigo(codigoProduto).subscribe(
+        (produto: Produto) => {
+          const novoProduto: Produto = {
+            id: produto.id,
+            codigo: produto.codigo,
+            nome: produto.nome,
+            quantidade: this.quantidadeProduto,
+            preco: produto.preco
+          };
+
+        this.produtos.push(novoProduto);
+        this.produtosTotal += Number(produto.preco) * this.quantidadeProduto;
       },
       (error) => {
-        window.alert('Código não encontrado!')
+        utils.exibirAviso(this.dialog, "Produto não encontrado!");
+        
       }
     );
     this.codigoProduto = "";
+    }else{
+      window.alert("Verifique os dados!");
+    }
   }
 
   @HostListener('window:resize', ['$event'])
@@ -49,6 +72,7 @@ export class PdvComponentComponent implements OnInit{
   }
 
   ngOnInit() {
+ 
     this.atualizarTamanhoDaTela();
     this.produtoSvc.getProdutos().subscribe(
       (data: any[]) => {
@@ -59,4 +83,13 @@ export class PdvComponentComponent implements OnInit{
       }
     );
   }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.campoCodigo.nativeElement.focus();
+    }, 1000);
+  }
+  
+  
 }
+
