@@ -4,6 +4,7 @@ import { ProdutosService } from 'src/app/services/produtos.service';
 import { ViewChild } from '@angular/core';
 import { utils } from 'src/app/utils';
 import { MatDialog } from "@angular/material/dialog";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class PdvComponentComponent implements OnInit{
 
 
 
-  constructor(produtoSvc: ProdutosService, private dialog: MatDialog){
+  constructor(produtoSvc: ProdutosService, private dialog: MatDialog, private router: Router){
     this.produtoSvc = produtoSvc;
   }
 
@@ -49,6 +50,8 @@ export class PdvComponentComponent implements OnInit{
 
         this.produtos.push(novoProduto);
         this.produtosTotal += Number(produto.preco) * this.quantidadeProduto;
+
+        localStorage.setItem('produtos', JSON.stringify(this.produtos));
       },
       (error) => {
         utils.exibirAviso(this.dialog, "Produto não encontrado!");
@@ -59,6 +62,16 @@ export class PdvComponentComponent implements OnInit{
     }else{
       window.alert("Verifique os dados!");
     }
+  }
+
+  finalizarVendaPdv() {
+
+    console.log('tentando finalizar...');
+    this.router.navigate(['/finalizaVendaPdv'], {
+      queryParams: {
+        produtos: JSON.stringify(this.produtos)
+      }
+    });
   }
 
   @HostListener('window:resize', ['$event'])

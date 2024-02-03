@@ -1,0 +1,14 @@
+
+<app-titulo [titulo]="'Selecione a forma de pagamento'"></app-titulo>
+
+<div class="formas_pagamento_container">
+  <button class="forma_pagamento" (click)="finalizarVenda(1)"><mat-icon>account_balance_wallet</mat-icon>&nbsp;Dinheiro</button>
+  <button class="forma_pagamento" (click)="finalizarVenda(2)" ><mat-icon>credit_card</mat-icon>&nbsp;Cartão</button>
+  <button class="forma_pagamento" (click)="finalizarVenda(3)"><mat-icon> fastfood</mat-icon>&nbsp;Vale alimentação</button>
+  <button class="forma_pagamento" (click)="finalizarVenda(4)"><mat-icon>card_giftcard</mat-icon>&nbsp;Vale presente</button>
+  <button class="forma_pagamento" (click)="finalizarVenda(5)"><mat-icon>call_to_action</mat-icon>&nbsp;Cheque</button>
+  <button class="forma_pagamento" (click)="finalizarVenda(6)"><mat-icon>featured_play_list</mat-icon>&nbsp;Boleto</button>
+  <button class="forma_pagamento" (click)="finalizarVenda(7)"><mat-icon>pix</mat-icon>&nbsp;Pix</button>
+  <button class="forma_pagamento" (click)="finalizarVenda(8)"><mat-icon>account_balance</mat-icon>&nbsp;Depósito bancário</button>
+  <button class="forma_pagamento" (click)="finalizarVenda(9)">	<mat-icon>calendar_today</mat-icon>&nbsp;Crediário</button>
+</div>
