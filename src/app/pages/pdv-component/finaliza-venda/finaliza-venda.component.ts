@@ -2,11 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { VendasService } from 'src/app/services/vendas/vendas.service';
 import { Venda } from 'src/app/models/venda.model';
 import { Produto } from 'src/app/models/produtos.model';
-import * as pdfMake from 'pdfmake/build/pdfmake';
-import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 import { ActivatedRoute } from '@angular/router';
-
-
+import jspdf, { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-finaliza-venda',
@@ -14,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./finaliza-venda.component.scss']
 })
 export class FinalizaVendaComponent implements OnInit {
+  htmlDav: string = ''; 
   produtos: Produto[] = [];
   public totalProdutos: number = 0;
   public formaPagamento: number = 1;
@@ -32,6 +31,8 @@ export class FinalizaVendaComponent implements OnInit {
 
   constructor(private vendasService: VendasService, private route: ActivatedRoute) {}
 
+  
+
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       if (params['produtos']) {
@@ -41,7 +42,7 @@ export class FinalizaVendaComponent implements OnInit {
     });
 
     this.totalProdutos = this.produtos.reduce((total, produto) =>
-     total + (produto.preco * (produto.quantidade ?? 1)), 0);
+      total + (produto.preco * (produto.quantidade ?? 1)), 0);
   }
 
   finalizarVenda(formaPagamento: number) {
@@ -51,24 +52,40 @@ export class FinalizaVendaComponent implements OnInit {
       forma_pagamento: formaPagamento
     };
 
-    console.log(novaVenda);
 
-    this.vendasService.salvarVenda(novaVenda);
-    // .subscribe(
-    //   (response: any) => {
-    //     const htmlContent = response['html'];
 
-    //     console.log(htmlContent);
+    this.vendasService.salvarVenda(novaVenda).subscribe(
+      (response: any) => {
+        if (response.body.htmlDav) {
+       
+          this.htmlDav = response.body.htmlDav;
 
-    //     // Converter HTML para PDF usando pdfmake
-    //     const pdfDefinition = { content: [{ text: htmlContent, fontSize: 12 }] };
+          const tempContainer = document.createElement('div');
+          tempContainer.innerHTML = this.htmlDav;
+          document.body.appendChild(tempContainer);
 
-    //     pdfMake.createPdf(pdfDefinition).open();
-    //   },
-    //   error => {
-    //     console.error('Erro ao receber o HTML:', error);
-    //   }
-    // );
+          html2canvas(tempContainer).then((canvas) => {
+            const pdf = new jsPDF('p', 'mm', 'a4');
+            const imgData = canvas.toDataURL('image/png');
+
+
+            const imgWidth = 190; // Largura da imagem
+            const imgHeight = (canvas.height * imgWidth) / canvas.width; // Mantenha a proporção
+
+            // Adicione a imagem do canvas ao PDF
+            pdf.addImage(imgData, 'PNG', 10, 10, imgWidth, imgHeight);
+
+            const pdfBlob = pdf.output('blob');
+            const pdfUrl = URL.createObjectURL(pdfBlob);
+            window.open(pdfUrl, '_blank');
+            tempContainer.remove();
+          });
+        }
+      },
+      (error) => {
+        console.error('Erro ao obter o HTML da venda:', error);
+      }
+    );
   }
 }
 

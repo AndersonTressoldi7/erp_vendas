@@ -14,16 +14,9 @@ export class VendasService {
   constructor(private http: HttpClient) { }
 
   salvarVenda(venda: Venda, headers?: HttpHeaders) {
-    return this.http.post(`${this.urlBase}/vendas/salvarVenda`, venda, { headers, responseType: 'text' })
-      .subscribe(
-        (htmlResponse: string) => {
-          // Fazer o que for necessário com o HTML retornado
-          console.log('HTML retornado:', htmlResponse);
-        },
-        error => {
-          console.error('Erro ao salvar venda:', error);
-        }
-      );
-      }
-    }  
-
+    return this.http.post(`${this.urlBase}/vendas/salvarVenda`, venda, {
+      headers,
+      observe: 'response',
+    });
+    }
+  }
