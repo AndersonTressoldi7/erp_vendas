@@ -1,7 +1,10 @@
 
 <app-titulo [titulo]="'Selecione a forma de pagamento'"></app-titulo>
+<div class="loading-overlay" *ngIf="isLoading">
+  <mat-progress-spinner mode="indeterminate">Gerando Dav</mat-progress-spinner>
+</div>
 
-<div class="formas_pagamento_container">
+<div class="formas_pagamento_container"> 
   <button class="forma_pagamento" (click)="finalizarVenda(1)"><mat-icon>account_balance_wallet</mat-icon>&nbsp;Dinheiro</button>
   <button class="forma_pagamento" (click)="finalizarVenda(2)" ><mat-icon>credit_card</mat-icon>&nbsp;Cartão</button>
   <button class="forma_pagamento" (click)="finalizarVenda(3)"><mat-icon> fastfood</mat-icon>&nbsp;Vale alimentação</button>

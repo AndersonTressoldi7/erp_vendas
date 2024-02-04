@@ -14,6 +14,7 @@ export class VendasService {
   constructor(private http: HttpClient) { }
 
   salvarVenda(venda: Venda, headers?: HttpHeaders) {
+    console.log(venda);
     return this.http.post(`${this.urlBase}/vendas/salvarVenda`, venda, {
       headers,
       observe: 'response',

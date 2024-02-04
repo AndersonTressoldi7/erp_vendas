@@ -14,9 +14,21 @@
     color: rgb(0, 0, 0);
 }
 
-.icons-navbar{
-    color: rgb(43 136 196);
+.icons-navbar {
+    color: rgb(43, 136, 196);
+    font-size: 24px; 
+    transition: all 0.3s ease;
 }
+
+.options-letter{
+    font-size: 20px;
+}
+
+.options-letter:hover .icons-navbar {
+    color: #007994; 
+    font-size: 28px;
+}
+
 
 .title-page-navbar{
     margin-left: 10px;

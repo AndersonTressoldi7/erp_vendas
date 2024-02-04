@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ListagemProdutosComponent } from './pages/listagem-produtos/listagem-produtos.component';
 import { TituloComponent } from './templates/titulo/titulo.component';
 import { FinalizaVendaComponent } from './pages/pdv-component/finaliza-venda/finaliza-venda.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { FinalizaVendaComponent } from './pages/pdv-component/finaliza-venda/fin
     FinalizaVendaComponent,
   ],
   imports: [
+    MatProgressSpinnerModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

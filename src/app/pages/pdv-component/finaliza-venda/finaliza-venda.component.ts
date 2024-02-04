@@ -3,8 +3,9 @@ import { VendasService } from 'src/app/services/vendas/vendas.service';
 import { Venda } from 'src/app/models/venda.model';
 import { Produto } from 'src/app/models/produtos.model';
 import { ActivatedRoute } from '@angular/router';
-import jspdf, { jsPDF } from 'jspdf';
-import html2canvas from 'html2canvas';
+import { Router } from '@angular/router';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
+
 
 @Component({
   selector: 'app-finaliza-venda',
@@ -16,6 +17,7 @@ export class FinalizaVendaComponent implements OnInit {
   produtos: Produto[] = [];
   public totalProdutos: number = 0;
   public formaPagamento: number = 1;
+  isLoading: boolean = false;
 
   formasPagamento: FormaPagamento[] = [
     { id: 1, nome: 'Dinheiro' },
@@ -29,11 +31,11 @@ export class FinalizaVendaComponent implements OnInit {
     { id: 9, nome: 'Crediário' }
   ];
 
-  constructor(private vendasService: VendasService, private route: ActivatedRoute) {}
-
+  constructor(private vendasService: VendasService, private route: ActivatedRoute, private routerNav: Router) {}
   
 
   ngOnInit(): void {
+    
     this.route.queryParams.subscribe(params => {
       if (params['produtos']) {
         this.produtos = JSON.parse(params['produtos']);
@@ -46,45 +48,38 @@ export class FinalizaVendaComponent implements OnInit {
   }
 
   finalizarVenda(formaPagamento: number) {
+    this.isLoading = true;
+
     const novaVenda: Venda = {
       produtos: this.produtos,
       valor: this.totalProdutos,
       forma_pagamento: formaPagamento
     };
 
-
+    
 
     this.vendasService.salvarVenda(novaVenda).subscribe(
-      (response: any) => {
-        if (response.body.htmlDav) {
-       
-          this.htmlDav = response.body.htmlDav;
+      (response: any) => {     
+        if(response){
 
-          const tempContainer = document.createElement('div');
-          tempContainer.innerHTML = this.htmlDav;
-          document.body.appendChild(tempContainer);
-
-          html2canvas(tempContainer).then((canvas) => {
-            const pdf = new jsPDF('p', 'mm', 'a4');
-            const imgData = canvas.toDataURL('image/png');
-
-
-            const imgWidth = 190; // Largura da imagem
-            const imgHeight = (canvas.height * imgWidth) / canvas.width; // Mantenha a proporção
-
-            // Adicione a imagem do canvas ao PDF
-            pdf.addImage(imgData, 'PNG', 10, 10, imgWidth, imgHeight);
-
-            const pdfBlob = pdf.output('blob');
-            const pdfUrl = URL.createObjectURL(pdfBlob);
-            window.open(pdfUrl, '_blank');
-            tempContainer.remove();
-          });
+          const pdfData = response.body.pdf;
+          const decodedData = new Uint8Array(atob(pdfData).split('').map(char => char.charCodeAt(0)));
+          const blob = new Blob([decodedData], { type: 'application/pdf' });
+          
+          const url = URL.createObjectURL(blob);
+          window.open(url, '_blank');
+          this.routerNav.navigate(['/pdv']);
         }
       },
       (error) => {
+        this.isLoading = false;
         console.error('Erro ao obter o HTML da venda:', error);
-      }
+      },
+
+    () => {
+      this.isLoading = false; 
+    }
+
     );
   }
 }

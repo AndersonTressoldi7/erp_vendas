@@ -65,13 +65,15 @@ export class PdvComponentComponent implements OnInit{
   }
 
   finalizarVendaPdv() {
-
-    console.log('tentando finalizar...');
+    if(this.produtos.length){
     this.router.navigate(['/finalizaVendaPdv'], {
       queryParams: {
         produtos: JSON.stringify(this.produtos)
       }
     });
+  }else{
+    utils.exibirAviso(this.dialog, "Adicione Produtos a venda!");
+  }
   }
 
   @HostListener('window:resize', ['$event'])

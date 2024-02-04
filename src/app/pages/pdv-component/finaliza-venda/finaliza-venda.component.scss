@@ -29,3 +29,21 @@
 .forma_pagamento:hover{
     background-color:rgb(0, 179, 255);
 }
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Um fundo semi-transparente para sobrepor outros elementos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999; /* Certifique-se de que está acima de outros elementos */
+  }
+  
+  mat-progress-spinner {
+    z-index: 1000; /* Certifique-se de que o spinner está acima do fundo semi-transparente */
+  }
+  
