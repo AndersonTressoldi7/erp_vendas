@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+}
+
+.total-dialog-mensagem {
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; 
+    margin: 0;
+    padding: 0;
+}
+
+.dialog-aviso-mensagem {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px; 
+}
+
+.data-mensagem {
+    font-size: 30px;
+}
+

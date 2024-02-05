@@ -1,0 +1,9 @@
+<div class="total-dialog-mensagem">
+    <div class="dialog-aviso-mensagem">
+        <p class="data-mensagem">{{ data.mensagem }}</p><br>
+        <div mat-dialog-actions>
+            <button mat-button (click)="fecharDialog(false)">Não</button>
+            <button mat-button color="primary" (click)="fecharDialog(true)">Sim</button>
+          </div>
+    </div>
+</div>
