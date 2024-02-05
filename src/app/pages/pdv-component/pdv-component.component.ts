@@ -5,6 +5,8 @@ import { ViewChild } from '@angular/core';
 import { utils } from 'src/app/utils';
 import { MatDialog } from "@angular/material/dialog";
 import { Router } from '@angular/router';
+import { ListagemProdutosComponent } from '../listagem-produtos/listagem-produtos.component';
+import { DescontoAcrescimoComponent } from 'src/app/templates/desconto-acrescimo/desconto-acrescimo.component';
 
 
 @Component({
@@ -21,6 +23,8 @@ export class PdvComponentComponent implements OnInit{
   produtos: Array<Produto> = [];
   produtosTotal: number = 0;
   quantidadeProduto: number = 1;
+  desconto: number = 0;
+  acrescimo: number = 0;
 
   
 
@@ -50,6 +54,8 @@ export class PdvComponentComponent implements OnInit{
 
         this.produtos.push(novoProduto);
         this.produtosTotal += Number(produto.preco) * this.quantidadeProduto;
+
+       
 
         localStorage.setItem('produtos', JSON.stringify(this.produtos));
       },
@@ -104,6 +110,42 @@ export class PdvComponentComponent implements OnInit{
       this.campoCodigo.nativeElement.focus();
     }, 1000);
   }
+
+  abrirDialogListagemProdutos(){
+    this.dialog.open(ListagemProdutosComponent, {
+      width: '1500px',
+    });
+  }
+
+  cancelarVenda() {
+    utils.exibirPergunta(this.dialog, "Deseja realmente cancelar está venda?")
+      .then(retorno => {
+        if (retorno) {
+          this.produtos = [];
+          this.produtosTotal = 0;
+        }
+      });
+  }
+
+  efetuarDescontoAcrescimo(){
+    const descontoAcrescimo = this.dialog.open(DescontoAcrescimoComponent,{
+      width: '500px',
+      height: '200px'
+  });
+
+  descontoAcrescimo.afterClosed().subscribe(result => {
+    if(this.desconto > 0){
+      console.log('entrou no desconto');
+      this.produtosTotal = this.produtosTotal - this.desconto;
+    }
+
+    if(this.acrescimo > 0){
+      console.log('entrou no acrescimo');
+      this.produtosTotal = this.produtosTotal + this.acrescimo;
+    }
+  });
+  }
+  
   
   
 }

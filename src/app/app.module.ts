@@ -22,6 +22,8 @@ import { ListagemProdutosComponent } from './pages/listagem-produtos/listagem-pr
 import { TituloComponent } from './templates/titulo/titulo.component';
 import { FinalizaVendaComponent } from './pages/pdv-component/finaliza-venda/finaliza-venda.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { DialogPerguntaComponent } from './templates/dialog-pergunta/dialog-pergunta.component';
+import { DescontoAcrescimoComponent } from './templates/desconto-acrescimo/desconto-acrescimo.component';
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ListagemProdutosComponent,
     TituloComponent,
     FinalizaVendaComponent,
+    DialogPerguntaComponent,
+    DescontoAcrescimoComponent,
   ],
   imports: [
     MatProgressSpinnerModule,
