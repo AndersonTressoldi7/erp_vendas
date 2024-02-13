@@ -24,6 +24,7 @@ import { FinalizaVendaComponent } from './pages/pdv-component/finaliza-venda/fin
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DialogPerguntaComponent } from './templates/dialog-pergunta/dialog-pergunta.component';
 import { DescontoAcrescimoComponent } from './templates/desconto-acrescimo/desconto-acrescimo.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { DescontoAcrescimoComponent } from './templates/desconto-acrescimo/desco
     FormsModule,
     HttpClientModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent],

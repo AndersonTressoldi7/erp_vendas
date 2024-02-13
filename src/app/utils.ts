@@ -18,7 +18,7 @@ export class utils{
         const dialogRef = dialog.open(DialogPerguntaComponent,{
             data: {mensagem: mensagem },
             width: '500px',
-            height: '200px'
+            height: '150px'
         })
 
         return dialogRef.afterClosed().toPromise();

@@ -1,9 +1,11 @@
-<div class="total-dialog-mensagem">
-    <div class="dialog-aviso-mensagem">
-        <p class="data-mensagem">{{ data.mensagem }}</p><br>
-        <div mat-dialog-actions>
-            <button mat-button (click)="fecharDialog(false)">Não</button>
-            <button mat-button color="primary" (click)="fecharDialog(true)">Sim</button>
-          </div>
-    </div>
+<div class="total_dialog_pergunta">
+<div class="dialog_pergunta">
+    <p class="data_mensagem">{{ data.mensagem }}</p><br>
+</div>
+
+<div class="botoes_pergunta">
+    <button mat-button (click)="fecharDialog(false)">Não</button>
+    <button mat-button color="primary" (click)="fecharDialog(true)">Sim</button>
+</div>
+
 </div>
