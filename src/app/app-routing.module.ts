@@ -7,6 +7,8 @@ import { RelatoriosComponent } from './pages/relatorios/relatorios.component';
 import { ListagemProdutosComponent } from './pages/listagem-produtos/listagem-produtos.component';
 import { FinalizaVendaComponent } from './pages/pdv-component/finaliza-venda/finaliza-venda.component';
 
+import { ListagemPessoasComponent } from './pages/listagem-pessoas/listagem-pessoas.component';
+
 const routes: Routes = [
   { path: '', component: PdvComponentComponent},
   { path: 'CadastrosComponent', component: CadastrosComponent },
@@ -15,6 +17,7 @@ const routes: Routes = [
   { path: 'relatorios', component: RelatoriosComponent},
   { path: 'listaProdutos', component: ListagemProdutosComponent},
   { path: 'finalizaVendaPdv', component: FinalizaVendaComponent},
+  {path: 'listaPessoas', component: ListagemPessoasComponent},
 ];
 
 

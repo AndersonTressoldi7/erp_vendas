@@ -1,0 +1,88 @@
+.tela_inteira {
+    margin-top: 1%;
+    height: 100%;
+    width: 100%;
+    place-items: center; 
+}
+
+.listagem_pessoas {
+    display: grid;
+    grid-template-columns: repeat(7, 0.5fr); 
+    width: 100%;
+    height: 10%;
+    border-radius: 10px;
+    gap: 10px;
+    
+}
+
+.listagem_pessoas .dados_pessoas {
+    height: 14vh;
+    width: 30vh;
+    background-image: linear-gradient(to left, rgba(0, 132, 255, 0.849), rgba(0, 191, 255, 0.849), rgba(0, 225, 255, 0.849));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+   flex-direction: column;
+   
+   box-shadow: 5px 5px 5px rgb(174, 174, 174);
+}
+
+.listagem_pessoas :hover{
+    background-color:rgb(0, 179, 255);
+}
+
+#inputBusca {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .inputBusca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .checkboxBusca{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    
+  }
+  
+  button {
+    padding: 8px;
+    background-color: #06b2a9; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #01c8ff; 
+  }
+
+
+.opcoesBusca{
+    display: inline-flex;
+  
+
+}
+  .checkboxBusca input[type="checkbox"] {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkboxBusca label {
+    font-size: 16px;
+    color: #333; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }

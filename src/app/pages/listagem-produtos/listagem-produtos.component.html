@@ -19,36 +19,12 @@
     </div>
 </div>
 
-<table class="listaProdutos" style="border-collapse: collapse; width: 100%; background-color: #00c8fff1;">
-            <th style="padding: 8px; vertical-align: middle;">Descrição</th>
-            <th style="padding: 8px; vertical-align: middle;">Código</th>
-            <th style="padding: 8px; vertical-align: middle;">Preço</th>
-  </table>
-
-  <div *ngIf="!(produtos.length == 0)" class="selecao-produtos" style="height: 80%; overflow: auto;">
-        <div class="container-selecoes-pdv">
+<div class="tela_inteira">
+  <div class="listagem_pessoas"   *ngIf="produtos.length > 0">
+      <div  class="dados_pessoas" *ngFor="let produto of produtos">
       
-          <div style="overflow: auto;">
-            <table class="lista-produtos-pdv" style="border-collapse: collapse; width: 100%;">
-              <thead>
-                <tr style="background-color: #f2f2f2;">
+        <div>{{ produto.nome }}</div>
       
-                </tr>
-              </thead>
-              <tbody style="line-height: 1.5;">
-      
-                <ng-container *ngFor="let produto of produtos; let i = index">
-      
-                  <tr [style.background-color]="i % 2 === 0 ? '#f2f2f2' : '#ffffff'">
-                    <td style="padding: 8px; vertical-align: middle;">{{produto.nome}}</td>
-                    <td style="padding: 8px; vertical-align: middle;">{{produto.codigo}}</td>
-                    <td style="padding: 8px; display: flex; align-items: flex-end;">{{produto.preco}}</td>
-                  </tr>
-      
-                </ng-container>
-              </tbody>
-            </table>
-      
-          </div>
-        </div>
       </div>
+    </div>
+  </div>

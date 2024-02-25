@@ -25,6 +25,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DialogPerguntaComponent } from './templates/dialog-pergunta/dialog-pergunta.component';
 import { DescontoAcrescimoComponent } from './templates/desconto-acrescimo/desconto-acrescimo.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PessoasComponent } from './pages/cadastros/pessoas/pessoas.component';
+import { ListagemPessoasComponent } from './pages/listagem-pessoas/listagem-pessoas.component';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FinalizaVendaComponent,
     DialogPerguntaComponent,
     DescontoAcrescimoComponent,
+    PessoasComponent,
+    ListagemPessoasComponent,
   ],
   imports: [
     MatProgressSpinnerModule,

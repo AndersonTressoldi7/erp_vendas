@@ -1,0 +1,25 @@
+<app-titulo [titulo]="'Cadastros de pessoas'"></app-titulo>
+
+<div class="inputBusca">
+    <input [(ngModel)]="filtro"  placeholder="Digite o nome" id="inputBusca">
+     
+    <button   (click)="buscarPessoasPeloFiltro(filtro)">Buscar</button>
+
+</div>
+
+<div class="opcoesBusca">
+    <div class="botaoCadastrarProduto">
+        <button id="cadastrarNovaPessoa">Novo cadastro</button>
+    </div>
+</div>
+ 
+<div class="tela_inteira">
+<div class="listagem_pessoas"   *ngIf="pessoas.length > 0">
+    <div  class="dados_pessoas" *ngFor="let pessoa of pessoas">
+    
+      <div>{{ pessoa.nome }}</div>
+      <div>{{ pessoa.cpfCnpj }}</div>
+    </div>
+  </div>
+</div>
+  
