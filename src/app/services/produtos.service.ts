@@ -26,6 +26,11 @@ export class ProdutosService {
   
     return this.http.post<Produto>(`${this.urlBase}/produtos/cadastrarProduto`, data);
   }
+
+  editarProduto(produtoEditado: Produto){
+    const data = { produto: produtoEditado };
+    return this.http.put<Produto>(`${this.urlBase}/produtos/cadastrarProduto`, data);
+  }
   
   buscarProdutosFiltro(filtro: string, checkboxSelecionado: string): Observable<any[]>{
     const url = `${this.urlBase}/produtos/filtrarProduto/?filtros=${filtro}&checkboxTipoFiltro=${checkboxSelecionado}`;

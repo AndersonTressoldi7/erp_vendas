@@ -34,8 +34,6 @@ export class ListagemPessoasComponent implements OnInit{
 
   buscarPessoasPeloFiltro(filtro: string){
 
-    console.log('O filtro dentro da função ', filtro);
-
     const checkboxSelecionado = 'nome';
     
     this.pessoasSvc.buscarPessoasFiltro(filtro, checkboxSelecionado).subscribe(

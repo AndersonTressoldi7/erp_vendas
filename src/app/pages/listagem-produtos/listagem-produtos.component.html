@@ -20,8 +20,8 @@
 </div>
 
 <div class="tela_inteira">
-  <div class="listagem_pessoas"   *ngIf="produtos.length > 0">
-      <div  class="dados_pessoas" *ngFor="let produto of produtos">
+  <div class="listagem_produtos"   *ngIf="produtos.length > 0">
+      <div  class="dados_produtos" *ngFor="let produto of produtos" (click)="abrirDialogCadastroProdutos(produto)">
       
         <div>{{ produto.nome }}</div>
       

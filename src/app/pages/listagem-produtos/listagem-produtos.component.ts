@@ -23,10 +23,11 @@ export class ListagemProdutosComponent implements OnInit{
     this.produtoSvc = produtoSvc;
   }
 
-  abrirDialogCadastroProdutos() {
+  abrirDialogCadastroProdutos(produto?: Produto) {
     const dialogRef = this.dialog.open(ProdutosComponent, {
       width: '900px', 
-      height: '400px'
+      height: '400px',
+      data: produto ? produto : null
     });
 
     dialogRef.afterClosed().subscribe(() => {
@@ -67,9 +68,6 @@ export class ListagemProdutosComponent implements OnInit{
     );
   }
 
- 
-
-
   onCodigoCheckboxChange() {
     if (this.codigoCheckbox) {
       this.descricaoCheckbox = false;
@@ -80,5 +78,9 @@ export class ListagemProdutosComponent implements OnInit{
     if (this.descricaoCheckbox) {
       this.codigoCheckbox = false;
     }
+  }
+
+  abrirDialogProdutos(produto: Produto){
+    console.log('teste', produto);
   }
 }

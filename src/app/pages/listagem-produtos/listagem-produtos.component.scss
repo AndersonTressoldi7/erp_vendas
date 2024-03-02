@@ -91,7 +91,7 @@
 }
 
 
-.listagem_pessoas {
+.listagem_produtos {
 margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(7, 0.5fr); 
@@ -102,7 +102,7 @@ margin-top: 20px;
   
 }
 
-.listagem_pessoas .dados_pessoas {
+.listagem_produtos .dados_produtos {
   height: 14vh;
   width: 30vh;
   background-image: linear-gradient(to left, rgba(0, 132, 255, 0.849), rgba(0, 191, 255, 0.849), rgba(0, 225, 255, 0.849));
@@ -117,4 +117,8 @@ margin-top: 20px;
 
 .listagem_pessoas :hover{
   background-color:rgb(0, 179, 255);
+}
+
+.dados_produtos{
+  cursor: pointer;
 }
