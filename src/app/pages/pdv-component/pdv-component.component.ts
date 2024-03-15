@@ -7,6 +7,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { Router } from '@angular/router';
 import { ListagemProdutosComponent } from '../listagem-produtos/listagem-produtos.component';
 import { DescontoAcrescimoComponent } from 'src/app/templates/desconto-acrescimo/desconto-acrescimo.component';
+import { SelecionaProdutosListagemComponent } from './seleciona-produtos-listagem/seleciona-produtos-listagem.component';
 
 
 @Component({
@@ -18,7 +19,6 @@ export class PdvComponentComponent implements OnInit{
 
   @ViewChild('campoCodigo', { static: true }) campoCodigo!: ElementRef;
 
-
   codigoProduto: string = "";
   produtos: Array<Produto> = [];
   produtosTotal: number = 0;
@@ -26,16 +26,11 @@ export class PdvComponentComponent implements OnInit{
   desconto: number = 0;
   acrescimo: number = 0;
 
-  
-
   public produtoSvc: ProdutosService;
-
-
 
   constructor(produtoSvc: ProdutosService, private dialog: MatDialog, private router: Router){
     this.produtoSvc = produtoSvc;
   }
-
 
   public telaPequena: boolean = false;
 
@@ -55,13 +50,10 @@ export class PdvComponentComponent implements OnInit{
         this.produtos.push(novoProduto);
         this.produtosTotal += Number(produto.preco) * this.quantidadeProduto;
 
-       
-
         localStorage.setItem('produtos', JSON.stringify(this.produtos));
       },
       (error) => {
         utils.exibirAviso(this.dialog, "Produto não encontrado!");
-        
       }
     );
     this.codigoProduto = "";
@@ -112,7 +104,7 @@ export class PdvComponentComponent implements OnInit{
   }
 
   abrirDialogListagemProdutos(){
-    this.dialog.open(ListagemProdutosComponent, {
+    this.dialog.open(SelecionaProdutosListagemComponent, {
       width: '1500px',
     });
   }
@@ -129,8 +121,8 @@ export class PdvComponentComponent implements OnInit{
 
   efetuarDescontoAcrescimo(){
     const descontoAcrescimo = this.dialog.open(DescontoAcrescimoComponent,{
-      width: '500px',
-      height: '200px'
+      width: '700px',
+      height: '400px'
   });
 
   descontoAcrescimo.afterClosed().subscribe(result => {

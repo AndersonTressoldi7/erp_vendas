@@ -6,12 +6,26 @@
     <button   (click)="buscarPessoasPeloFiltro(filtro)">Buscar</button>
 
 </div>
+<mat-form-field>
+  <input matInput placeholder="Selecione uma pessoa" [formControl]="pessoasControl" [matAutocomplete]="auto">
+  <mat-form-field>
+    <input matInput placeholder="Selecione uma pessoa" [formControl]="pessoasControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let pessoa of filteredPessoas | async" [value]="pessoa.id">
+        {{ pessoa.nome }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  
+</mat-form-field>
+
 
 <div class="opcoesBusca">
     <div class="botaoCadastrarProduto">
         <button id="cadastrarNovaPessoa">Novo cadastro</button>
     </div>
 </div>
+
  
 <div class="tela_inteira">
 <div class="listagem_pessoas"   *ngIf="pessoas.length > 0">

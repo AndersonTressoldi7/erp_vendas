@@ -1,0 +1,9 @@
+<div class="total_dialog_pergunta">
+    <form>
+        <select name="linguagem" required="required">
+            <option value="">Escolha seu produto</option>
+            <option *ngFor="let produto of produtos" [value]="produto.value">{{ produto.nome }}</option>
+          </select>
+      <button type="submit">Enviar</button>
+    </form>
+    </div>

@@ -27,6 +27,11 @@ import { DescontoAcrescimoComponent } from './templates/desconto-acrescimo/desco
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PessoasComponent } from './pages/cadastros/pessoas/pessoas.component';
 import { ListagemPessoasComponent } from './pages/listagem-pessoas/listagem-pessoas.component';
+import { DialogGeraParcelasCrediarioComponent } from './pages/pdv-component/finaliza-venda/dialog-gera-parcelas-crediario/dialog-gera-parcelas-crediario.component';
+import { MatSelectModule} from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { SelecionaProdutosListagemComponent } from './pages/pdv-component/seleciona-produtos-listagem/seleciona-produtos-listagem.component';
+
 
 
 @NgModule({
@@ -47,6 +52,8 @@ import { ListagemPessoasComponent } from './pages/listagem-pessoas/listagem-pess
     DescontoAcrescimoComponent,
     PessoasComponent,
     ListagemPessoasComponent,
+    DialogGeraParcelasCrediarioComponent,
+    SelecionaProdutosListagemComponent,
   ],
   imports: [
     MatProgressSpinnerModule,
@@ -60,7 +67,9 @@ import { ListagemPessoasComponent } from './pages/listagem-pessoas/listagem-pess
     HttpClientModule,
     MatDialogModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    MatSelectModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent],

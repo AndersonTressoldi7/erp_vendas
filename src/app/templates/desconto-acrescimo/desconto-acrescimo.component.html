@@ -1,53 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .container {
-      text-align: center;
-    }
-
-    input {
-      padding: 10px;
-      margin: 5px;
-      font-size: 16px;
-      width: 200px;
-      box-sizing: border-box;
-    }
-
-    button {
-      padding: 10px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-  </style>
-</head>
-<body>
-
-    <div class="container">
-        <input [(ngModel)]="desconto" type="number" placeholder="Desconto">
-        <br>
-        <input [(ngModel)]="acrescimo" type="number" placeholder="Acréscimo">
-        <br>
-        <button (click)="inserirValores()">Inserir</button>
-      </div>
+<div class="total_dialog_aviso">
+  <div class="dialog_aviso">
+      <p class="data_aviso">
+        Desconto: <input placeholder="Valor do desconto"><br><br>
+        Acréscimo: <input placeholder="Valor do acréscimo">
       
-</body>
-</html>
+  </div>
+
+  <div class="div_botoes_aviso">
+      <button class="botoes_aviso" mat-button color="primary">Ok</button>
+  </div>
+</div>
+

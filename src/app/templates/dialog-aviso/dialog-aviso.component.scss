@@ -1,25 +1,33 @@
-body {
-    margin: 0;
+.dialog {
+    backdrop-filter: blur(8px);
 }
 
-.total-dialog-mensagem {
-    border-radius: 50px;
+.data_aviso{
+    font-size: 20px;
+}
+
+.total_dialog_aviso{
+    width: 100%;
+    height: 100%;
+    
+}
+.dialog_aviso{
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: hidden; 
-    margin: 0;
-    padding: 0;
-}
-
-.dialog-aviso-mensagem {
+    justify-content: center;
     text-align: center;
-    padding: 20px;
-    border-radius: 8px; 
+    width: 100%;
+    height: 60%;  
 }
 
-.data-mensagem {
-    font-size: 30px;
+
+.div_botoes_aviso{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
+.botoes_aviso:hover{
+    background-color: rgb(191, 191, 191);
+}
